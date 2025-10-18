@@ -4,13 +4,13 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "Silver Note",
-      videoUrl: "/personal-portfolio/public/v1.mp4", // Replace with your video URL
+      videoUrl: "", // Replace with your video URL
       description:
         "An note application mad in laravel where the mvc cycle is introduce and create read update delete operation are apply in this scenario.",
     },
     {
       title: "Ibong Adarna ang Paglalakbay",
-      videoUrl: "/personal-portfolio/public/v2.mp4", // Replace with your video URL
+      videoUrl: "", // Replace with your video URL
       description:
         "A group application that helps students from grade 8 to have an interactive learning experience by turning ibong adarna into a web digital game format.",
     },
