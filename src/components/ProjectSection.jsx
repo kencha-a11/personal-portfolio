@@ -4,15 +4,15 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "Silver Note",
-      videoUrl: "", // Replace with your video URL
+      videoUrl: "/personal-portfolio/public/videos/silver-note.mp4",
       description:
-        "An note application mad in laravel where the mvc cycle is introduce and create read update delete operation are apply in this scenario.",
+        "A note-taking web application built with Laravel, demonstrating the MVC pattern and full CRUD functionality.",
     },
     {
-      title: "Ibong Adarna ang Paglalakbay",
-      videoUrl: "", // Replace with your video URL
+      title: "Ibong Adarna: Ang Paglalakbay",
+      videoUrl: "/personal-portfolio/public/videos/ibong-adarna.mp4",
       description:
-        "A group application that helps students from grade 8 to have an interactive learning experience by turning ibong adarna into a web digital game format.",
+        "An educational web game designed for Grade 8 students, transforming the classic Ibong Adarna story into an interactive digital experience.",
     },
   ];
 
@@ -22,35 +22,45 @@ export default function ProjectsSection() {
         <div className="text-center mb-5">
           <h2 className="fw-bold text-dark">Projects</h2>
           <p className="text-muted fs-5">
-            Here are some of my recent projects with short explanations.
+            Explore some of my featured works demonstrating creativity and
+            technical expertise.
           </p>
         </div>
 
         <div className="row gy-5">
           {projects.map((project, index) => (
-            <div className="col-lg-6" key={index}>
+            <div className="col-lg-6 col-md-12" key={index}>
               <div
-                className="project-item bg-white shadow-sm rounded-4 p-3 h-100"
-                style={{ transition: "transform 0.3s, box-shadow 0.3s" }}
+                className="project-item bg-white shadow-sm rounded-4 p-3 h-100 d-flex flex-column"
+                style={{
+                  transition: "transform 0.3s, box-shadow 0.3s",
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+                  e.currentTarget.style.transform = "translateY(-6px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 6px 20px rgba(0, 0, 0, 0.1)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+                  e.currentTarget.style.boxShadow =
+                    "0 2px 10px rgba(0, 0, 0, 0.05)";
                 }}
               >
                 <div className="ratio ratio-16x9 mb-3">
-                  <iframe
-                    src={project.videoUrl}
-                    title={project.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  <video
+                    className="w-100 rounded"
+                    controls
+                    preload="metadata"
+                    poster="/assets/img/portfolio/branding-1.jpg" // optional preview image
+                  >
+                    <source src={project.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-                <h5 className="fw-semibold">{project.title}</h5>
-                <p className="text-muted">{project.description}</p>
+                <div className="flex-grow-1">
+                  <h5 className="fw-semibold">{project.title}</h5>
+                  <p className="text-muted">{project.description}</p>
+                </div>
               </div>
             </div>
           ))}
